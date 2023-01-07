@@ -24,7 +24,6 @@ class ReplayMemory:
     def sample(self):
         sample_length = min(self.length, self.size)
         batch = np.random.choice(sample_length, self.batch_size, replace=False)
-        # print(self.dones[batch].dtype)
         return  self.states[batch], \
                 self.actions[batch], \
                 self.rewards[batch], \
